@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,9 +17,8 @@ export default function AboutPage() {
 
       <section className="bg-white py-16">
         <div className="max-w-3xl mx-auto px-4 space-y-8 text-lg text-gray-700 leading-relaxed">
-          {/* Photo placeholder */}
-          <div className="bg-santa-cream rounded-2xl p-12 text-center border-2 border-dashed border-santa-gold/40">
-            <p className="text-santa-green font-medium">📸 Professional photos coming Fall 2026</p>
+          <div className="rounded-2xl overflow-hidden shadow-lg max-w-sm mx-auto">
+            <Image src="/images/santa-portrait.jpg" alt="Roger The Real Bearded Santa" width={400} height={400} className="w-full h-auto" priority />
           </div>
 
           <h2 className="text-2xl md:text-3xl font-bold text-santa-red font-[family-name:var(--font-serif)]">

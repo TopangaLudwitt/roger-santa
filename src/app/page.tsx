@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
   { icon: "🏠", title: "Home Visits", price: "From $300/hr", desc: "Personal visits with story time, present delivery, and photo opportunities." },
@@ -42,11 +43,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photo Placeholder */}
+      {/* Santa Photos */}
       <section className="bg-santa-cream py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-white rounded-2xl shadow-md p-12 border-2 border-dashed border-santa-gold/40">
-            <p className="text-santa-green text-lg font-medium">📸 Professional photos coming Fall 2026</p>
+        <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row gap-8 items-center justify-center">
+          <div className="rounded-2xl overflow-hidden shadow-lg max-w-md">
+            <Image src="/images/santa-portrait.jpg" alt="Roger The Real Bearded Santa - Portrait" width={500} height={500} className="w-full h-auto" priority />
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg max-w-md">
+            <Image src="/images/santa-sleigh.jpg" alt="Santa Clause with his reindeer and sleigh" width={500} height={500} className="w-full h-auto" />
           </div>
         </div>
       </section>
