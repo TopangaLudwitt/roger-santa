@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-santa-red: #8B0000;
+  --color-santa-red-light: #a01010;
+  --color-santa-gold: #FFD700;
+  --color-santa-cream: #FFFDD0;
+  --color-santa-green: #1a472a;
+  --color-santa-green-light: #2d6b45;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #333;
+  background: var(--color-santa-cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Snowfall animation */
+@keyframes snowfall {
+  0% { transform: translateY(-10vh) translateX(0); opacity: 1; }
+  100% { transform: translateY(105vh) translateX(20px); opacity: 0.3; }
+}
+
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 1rem;
+  pointer-events: none;
+  opacity: 0.7;
+  z-index: 50;
+  animation: snowfall linear infinite;
+}
