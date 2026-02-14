@@ -16,7 +16,7 @@ export default function Snowfall() {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
+    <div className="pointer-events-none fixed inset-0 z-30 overflow-hidden">
       {flakes.map((f) => (
         <div key={f.id} className="snowflake"
           style={{

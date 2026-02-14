@@ -1,5 +1,4 @@
 "use client";
-import type { Metadata } from "next";
 
 const eventTypes = [
   "Home Visit",
@@ -22,8 +21,16 @@ export default function BookPage() {
       <section className="bg-santa-cream py-16">
         <div className="max-w-2xl mx-auto px-4">
           <form
-            action="https://formspree.io/f/placeholder"
-            method="POST"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.target as HTMLFormElement;
+              const data = new FormData(form);
+              const subject = encodeURIComponent(`Santa Booking Request — ${data.get('eventType')} on ${data.get('eventDate')}`);
+              const body = encodeURIComponent(
+                `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nPhone: ${data.get('phone') || 'N/A'}\nEvent Type: ${data.get('eventType')}\nEvent Date: ${data.get('eventDate')}\nDuration: ${data.get('duration') || 'N/A'}\nLocation: ${data.get('location')}\n\nSpecial Requests:\n${data.get('message') || 'None'}`
+              );
+              window.location.href = `mailto:roger@rogertherealbeardedsanta.com?subject=${subject}&body=${body}`;
+            }}
             className="bg-white rounded-xl shadow-md p-8 space-y-6"
           >
             <div>

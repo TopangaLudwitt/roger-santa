@@ -21,8 +21,8 @@ export default function Footer() {
           <h4 className="font-bold mb-3">Connect</h4>
           <div className="flex flex-col gap-1 text-sm text-white/80">
             <a href="mailto:roger@rogertherealbeardedsanta.com" className="hover:text-santa-gold transition-colors">Email Santa</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-santa-gold transition-colors">Instagram</a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-santa-gold transition-colors">Facebook</a>
+            <span className="text-white/40 italic">Instagram — Coming Soon</span>
+            <span className="text-white/40 italic">Facebook — Coming Soon</span>
           </div>
         </div>
       </div>
